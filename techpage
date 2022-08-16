@@ -1,0 +1,116 @@
+Coin Controls Universalhopper MK4
+6.0 Technische Spezifikationen
+ 
+6.1 Münzgrößen ( Münzdurchmesser x Münzdicke )
+Standard Modell: 21 - 30mm x 1.25 - 3.5 mm
+ 
+Ausführung für 16 - 21 mm x 1.12 - 3.5 mm
+Kleinmünzen
+ 
+Der MK4 Hopper wurde gebaut um auch noch Münzen mit 31 mm im Durchmesser
+verarbeiten zu können.
+Münzen, welche sich außerhalb des oben angeführten Bereiches befinden können
+unter bestimmten Umständen ebenfalls noch verarbeitet werden, so diese bestimmte
+Bedingungen erfüllen. ( Weitere Information auf Anfrage ).
+Fassungsvermögen:
+Kapazität:
+2,- Euro 25.75/2,20 ca. 1000 Münzen
+1,- Euro 23.25/2,35 ca. 1200 Münzen
+0,5 Euro 24.25/2,40 ca. 1100 Münzen
+Berechnung Hopperkapazität:
+                                                                1,200.000
+Kapazität = Hopper Volumen/Münzvolumen =   TT x D²             D = Münzdurchmesser (mm)
+                                                                 -------- x T         T = Münzstärke (mm)
+                                                                     4                TT = Pi
+6.2 Anschlüsse:
+Pin 1 .......... Motor Versorgung 0V ( Masse )
+Pin 2 .......... Logic Versorgung 0V ( Masse )
+Pin 3 .......... Sensor Ausgang
+Pin 4 .......... Eingang 1
+Pin 5 .......... Security Ausgang
+Pin 6 .......... Ausgang : Hopper voll
+Pin 7 .......... Ausgang : Hopper leer
+Pin 8 .......... Eingang 2
+Pin 9 .......... Motor Versorgung
+Pin 10 ........ Logic Versorgung
+Pin 11 ........ RAW - Sensor Ausgang
+Pin 12 ........ Eingang 3
+ 
+6.3 Motor - Versorgung
+ 
+Stromaufnahme an der 24VDC Versorgung:
+Stromaufnahme im Leerlauf ( nominal)........... 0.5A
+Stromaufnahme im Retourlauf (nominal)........ 1.0 A
+Stromaufnahme im Retourlauf (Spitze) .......... 1.5A
+ 
+Anlaufstrom ( nominal ).................................. 2.0A
+ 
+Anforderungen an die Stromversorgung:
+ 
+2.0 A bei 24VAC
+Nennspannung ..........................................24 VDC
+Zulässiges Spannungsminimum .................18 VDC
+Zulässiges Spannungsmaximumi ...............27 VDC
+ 
+Max Anstiegszeit/Abfallzeit .....................50 ms
+Höchst zulässige Spannungsschwankung ...+3V/-6V
+ 
+ 
+6.4 Logic - Versorgung
+Nennspannung : ........................................12VDC bei 100mA
+Zulässiges Sannungsminimum : .................11VDC
+Zul. Spannungsmaximum :.........................27VDC
+Max. Anstiegszeit/Abfallzeit : ....................100ms
+Höchst zul. Spannungsschwankung : ..........+/- 1V
+ 
+6.5 Logic Eingänge ( IN1, IN2 und IN3 )
+Obergrenze für Logic 0 : ..........................Vin max 0.6 V
+Untergrenze für Logic 1 : .........................Vin min 2.4V
+ 
+ 
+6.6 Logic Ausgänge ( Sensoren, Security)
+Max. Spannung für aktiven Ausgang : .......Vout max 0.3V bei 50 mA
+Max. zulässige Belastung am Ausgang : ....100mA
+Max. Spannung am Ausgang : ...................30V
+Sensor - Ausgang ( Impulsdauer ): ............70 - 120ms
+ 
+6.6.1 Betriebsarten:
+ 
+Mode 0: In1 = 1 , IN2 = 1 Hopper läuft, solange IN 3 = 1 ( aktiv )
+Mode 1: In1 = 0 , IN2 = 0 Hopper läuft, solange Versorgung anliegt !
+Mode 2: In1 = 1 , IN2 = 0 Hopper gibt 1 Münze für
+1 Impuls auf IN3
+Reset : In1 = 0 , IN2 = 1
+Wichtig: Um die Betriebsart zu wahlen , müssen die Eingänge beschalten sein,
+bevor der Hopper versorgt wird !
+ 
+6.7 Anmerkungen zur Versorgung
+1.) WICHTIG: Die Angegebenen Maximalwerte für die
+Spannungsversorgung dürfen unter keinen Umständen
+überschritten werden.
+Anderenfalls können Zerstörungen und/oder Verletzungen
+die Folge von Überschreitungen sein.
+2.) Hoppergeschwindigkeit ( und damit die Auszahlrate ) können
+durch unterschiedliche Motor - Versorgungsspannungen
+stark varieren.
+3.) Die Abfallszeit der Hopperversorgung ist kritisch, wenn der Hopper
+im Mode 0 verwendet wird.
+Wenn das den Hopper beherbergende Gerät die richtige Anzahl
+von ausgegebenen Münzen gezählt hat, muß die 24V - Versorgung
+unterbrochen werden!
+Der Antriebsmotor läuft solange weiter, bis die Versorgungsspannung unter
+einen Wert von ca. 18VDC abgefallen ist.
+Dieses Faktum birgt die Gefahr von zu viel ausbezahlten Münzen,
+so die Abfallzeit länger als 5 ms beträgt !
+Eine geignete Einrichtung zum Abschalten der Stromversorgung
+wie Z.B. ein Transistor wird dafür empfohlen.
+4.) Die Stromaufnahme für "Standby" versteht sich als der Strom,
+welcher aufgenommen wird, wenn der Hoppermotor nicht angesteuzert wird, Z.B. wenn das Coinregister im Mode 2 auf 0 ist,
+oder der Eingang 3 auf High steht in Mode 1.
+6.8 Umgebungsbedingungen
+Arbeitstemperatur : ..........................................0 bis 60°C
+Lagertemperatur : .........................................-20 bis 60°C
+Lebensdauer : ...........................bis ca. 3.000.000 Münzen
+Montage : .........................vertikal +/- 3° in jede Richtung
+Anmerkung: Der Hopper MK4 ist nicht in explosionsgefährdeter
+Umgebung zu verwenden !
